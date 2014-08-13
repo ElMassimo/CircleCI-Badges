@@ -1,2 +1,5 @@
-require './web'
-run Sinatra::Application
+require 'rubygems'
+require 'sinatra'
+require './app'
+
+run SinatraBadges

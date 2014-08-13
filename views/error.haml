@@ -1,0 +1,8 @@
+%p.lead
+  You did not provide a valid CircleCI token, or the URL is invalid.
+
+%p.lead
+  %input.input.token{ type: :text, placeholder: 'Enter your token', value: params[:token] }
+
+%p.lead
+  %a.url-result{ href: 'https://circleci.com/account/api', target: '_blank' } Get a token
