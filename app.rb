@@ -18,6 +18,9 @@ class SinatraBadges < Sinatra::Base
   end
 
   get '/img/:owner/:repo/?*' do
+    response.headers['Cache-Control'] = 'no-cache'
+    response.headers['Last-Modified'] = Time.now.httpdate
+    response.headers['ETag'] = Time.now.utc.strftime("%s%L")
     if params[:token] && !params[:token].empty?
       params[:branch] ||= branch(params[:splat].first)
       redirect_to_badge
