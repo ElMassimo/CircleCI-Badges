@@ -11,7 +11,7 @@ $(document).ready(function() {
         function(badgeUrl) {
           $('.url-result').attr('href',badgeUrl).attr('target', '_blank').html('Test');
           $('.markdown').show().find('input').val(
-            '[![Test Coverage](' + badgeUrl + ')](' + urlInput.val() + ')'
+            '[![Build Status](' + badgeUrl + ')](' + urlInput.val() + ')'
           );
         }
       ).fail(
