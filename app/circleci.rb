@@ -9,7 +9,15 @@ end
 
 def badge(xml)
   status = MultiXml.parse(xml)['Projects']['Project']['lastBuildStatus']
-  status == 'Success' ? 'build-passing-green' : 'build-failing-red'
+  case status
+  when 'Success' then 'build-passing-brightgreen'
+  when 'Failure' then 'build-failing-red'
+  when 'Canceled' then 'build-lightgrey-orange'
+  else
+    'build-unknown-orange'
+  end
+rescue => e
+  'build-unknown-orange'
 end
 
 def badge_url(badge)
