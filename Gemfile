@@ -1,7 +1,7 @@
 # A sample Gemfile
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby File.read(File.expand_path('.ruby-version', __dir__)).chomp
 
 gem 'sinatra'
 gem 'sinatra-contrib'
